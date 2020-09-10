@@ -54,6 +54,10 @@ private:
   QtSound sound;
 
   bool onroad = true;
+  QLabel * label = NULL;
+  float brightness_b = 0;
+  float brightness_m = 0;
+  float smooth_brightness = 0;
 
 public slots:
   void timerUpdate();
