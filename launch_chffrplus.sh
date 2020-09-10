@@ -54,13 +54,14 @@ function launch {
     fi
   fi
 
-  # Android and other system processes are not permitted to run on CPU 3
-  # NEOS installed app processes can run anywhere
-  echo 0-2 > /dev/cpuset/background/cpus
-  echo 0-2 > /dev/cpuset/system-background/cpus
+  # Restrict Android and other system processes to the first two cores
+  echo 0-1 > /dev/cpuset/background/cpus
+  echo 0-1 > /dev/cpuset/system-background/cpus
   [ -d "/dev/cpuset/foreground/boost/cpus" ] && echo 0-2 > /dev/cpuset/foreground/boost/cpus  # Not present in < NEOS 15
-  echo 0-2 > /dev/cpuset/foreground/cpus
-  echo 0-2 > /dev/cpuset/android/cpus
+  echo 0-1 > /dev/cpuset/foreground/cpus
+  echo 0-1 > /dev/cpuset/android/cpus
+
+  # NEOS processes get all the cores
   echo 0-3 > /dev/cpuset/app/cpus
 
   # Collect RIL and other possibly long-running I/O interrupts onto CPU 1
