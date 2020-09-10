@@ -1,4 +1,5 @@
 """Utilities for reading real time clocks and keeping soft real time constraints."""
+import os
 import time
 import platform
 import subprocess
@@ -43,7 +44,7 @@ def set_core_affinity(core):
   if PC:
     return -1
   else:
-    return subprocess.call(['taskset', '-p', str(core), str(_get_tid())])
+    os.sched_setaffinity(_get_tid(), [core,])
 
 
 class Ratekeeper():
