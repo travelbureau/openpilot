@@ -262,6 +262,7 @@ CONFIGS = [
     init_callback=get_car_params,
     should_recv_callback=None,
     tolerance=NUMPY_TOLERANCE,
+    tolerance=None,
   ),
   ProcessConfig(
     proc_name="locationd",
