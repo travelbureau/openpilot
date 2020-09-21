@@ -2,6 +2,7 @@
 
 #include <QWidget>
 #include <QTimer>
+#include <QLabel>
 #include <QGuiApplication>
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
