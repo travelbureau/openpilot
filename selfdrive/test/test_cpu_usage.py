@@ -101,6 +101,8 @@ if __name__ == "__main__":
 
   passed = False
   try:
-    passed = test_cpu_usage()
+    # TODO: remove loop
+    for _ in range(200):
+      passed = test_cpu_usage()
   finally:
     sys.exit(int(not passed))
