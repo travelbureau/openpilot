@@ -79,9 +79,9 @@ Supported Cars
 | Honda     | Insight 2019-20               | Honda Sensing     | Stock            | 0mph               | 3mph              |
 | Honda     | Odyssey 2018-20               | Honda Sensing     | openpilot        | 25mph<sup>1</sup>  | 0mph              |
 | Honda     | Passport 2019                 | All               | openpilot        | 25mph<sup>1</sup>  | 12mph             |
-| Honda     | Pilot 2016-18                 | Honda Sensing     | openpilot        | 25mph<sup>1</sup>  | 12mph             |
-| Honda     | Pilot 2019                    | All               | openpilot        | 25mph<sup>1</sup>  | 12mph             |
+| Honda     | Pilot 2016-19                 | Honda Sensing     | openpilot        | 25mph<sup>1</sup>  | 12mph             |
 | Honda     | Ridgeline 2017-20             | Honda Sensing     | openpilot        | 25mph<sup>1</sup>  | 12mph             |
+| Hyundai   | Palisade 2020                 | All               | Stock            | 0mph               | 0mph         |
 | Hyundai   | Sonata 2020                   | All               | Stock            | 0mph               | 0mph              |
 | Lexus     | CT Hybrid 2017-18             | All               | Stock<sup>3</sup>| 0mph               | 0mph              |
 | Lexus     | ES 2019                       | All               | openpilot        | 0mph               | 0mph              |
@@ -89,7 +89,7 @@ Supported Cars
 | Lexus     | IS 2017-2019                  | All               | Stock            | 22mph              | 0mph              |
 | Lexus     | IS Hybrid 2017                | All               | Stock            | 0mph               | 0mph              |
 | Lexus     | NX Hybrid 2018                | All               | Stock<sup>3</sup>| 0mph               | 0mph              |
-| Lexus     | RX 2016-17                    | All               | Stock<sup>3</sup>| 0mph               | 0mph              |
+| Lexus     | RX 2016-18                    | All               | Stock<sup>3</sup>| 0mph               | 0mph              |
 | Lexus     | RX 2020                       | All               | openpilot        | 0mph               | 0mph              |
 | Lexus     | RX Hybrid 2016-19             | All               | Stock<sup>3</sup>| 0mph               | 0mph              |
 | Lexus     | RX Hybrid 2020                | All               | openpilot        | 0mph               | 0mph              |
@@ -104,8 +104,8 @@ Supported Cars
 | Toyota    | Corolla Hatchback 2019-20     | All               | openpilot        | 0mph               | 0mph              |
 | Toyota    | Corolla Hybrid 2020           | All               | openpilot        | 0mph               | 0mph              |
 | Toyota    | Highlander 2017-19            | All               | Stock<sup>3</sup>| 0mph               | 0mph              |
-| Toyota    | Highlander Hybrid 2017-19     | All               | Stock<sup>3</sup>| 0mph               | 0mph              |
 | Toyota    | Highlander 2020               | All               | openpilot        | 0mph               | 0mph              |
+| Toyota    | Highlander Hybrid 2017-19     | All               | Stock<sup>3</sup>| 0mph               | 0mph              |
 | Toyota    | Highlander Hybrid 2020        | All               | openpilot        | 0mph               | 0mph              |
 | Toyota    | Prius 2016                    | TSS-P             | Stock<sup>3</sup>| 0mph               | 0mph              |
 | Toyota    | Prius 2017-20                 | All               | Stock<sup>3</sup>| 0mph               | 0mph              |
@@ -147,7 +147,6 @@ Community Maintained Cars and Features
 | Hyundai   | Ioniq Electric Limited 2019   | SCC + LKAS        | Stock            | 0mph               | 32mph        |
 | Hyundai   | Kona 2020                     | SCC + LKAS        | Stock            | 0mph               | 0mph         |
 | Hyundai   | Kona EV 2019                  | SCC + LKAS        | Stock            | 0mph               | 0mph         |
-| Hyundai   | Palisade 2020                 | All               | Stock            | 0mph               | 0mph         |
 | Hyundai   | Santa Fe 2019                 | All               | Stock            | 0mph               | 0mph         |
 | Hyundai   | Sonata 2019                   | All               | Stock            | 0mph               | 0mph         |
 | Hyundai   | Veloster 2019                 | SCC + LKAS        | Stock            | 5mph               | 0mph         |
@@ -274,8 +273,23 @@ Safety and Testing
 
 Testing on PC
 ------
+For simplified development and experimentation, openpilot runs in the CARLA driving simulator, which allows you to develop openpilot without a car.
 
-Check out the tools directory in master: lots of tools you can use to replay driving data, test and develop openpilot from your pc.
+Steps:
+1) Start the CARLA server on first terminal
+```
+bash -c "$(curl https://raw.githubusercontent.com/commaai/openpilot/master/tools/sim/start_carla.sh)"
+```
+2) Start openpilot on second terminal
+```
+bash -c "$(curl https://raw.githubusercontent.com/commaai/openpilot/master/tools/sim/start_openpilot_docker.sh)"
+```
+3) Press 1 to engage openpilot
+
+See the full [README](tools/sim/README.md)
+
+You should also take a look at the tools directory in master: lots of tools you can use to replay driving data, test, and develop openpilot from your PC.
+
 
 Community and Contributing
 ------
